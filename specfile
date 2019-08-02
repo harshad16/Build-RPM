@@ -1,0 +1,20 @@
+Name: %{getenv:TF_NAME}
+Version: 1.0
+Release: 1
+Summary: %{getenv:TF_NAME} binary
+License: license.txt
+
+%description
+More detailed description of the hello world binary
+
+%install
+%rm_br
+%mk_path
+cp %{getenv:BIN_FILE} %{_bin}
+
+%clean
+%rm_br
+
+%files
+%_bin_perm
+%{_bindir}/%{getenv:BIN_NAME}
